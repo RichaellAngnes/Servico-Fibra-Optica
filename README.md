@@ -6,4 +6,4 @@ Ainda estou criando mais situações
 
 ***
 
-**[Visite o site](https://sites.google.com/view/jogodereparo/in%C3%ADcio)**
+**[Visite o site](https://sites.google.com/view/jogodereparo/in%C3%ADcio)** :globe_with_meridians:

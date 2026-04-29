@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+        font-family: Arial;
+        background: rgba(17, 24, 39, 1);
+        padding: 20px;
+        }
+
+        .pagina {
+        display: none;
+        background: rgba(17, 24, 39, 1);
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(153, 0, 255, 0.1);
+        }
+
+        .ativa {
+        display: block;
+        }
+
+        button {
+        padding: 0.6em 2em;
+        border: none;
+        outline: none;
+        color: rgb(255, 255, 255);
+        background: #111;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        display: block;
+        margin-bottom: 10px;
+        }
+
+        .button:before {
+        content: "";
+        background: linear-gradient(
+            20deg,
+            #ff0000,
+            #7b00ff,
+            #ff00c8,
+            #ff0000
+        );
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing-button-85 20s linear infinite;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+        }
+
+        .button:after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #222;
+        left: 0;
+        top: 0;
+        border-radius: 20px;
+        }
+            
+        div {
+        width: 90%;
+        max-width: 600px;
+        background: linear-gradient(#f3f1f1, #ffffff) padding-box,
+                    linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
+        border: 2px solid transparent;
+        padding: 0 auto;
+        font-size: 14px;
+        font-family: inherit;
+        color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-sizing: border-box;
+        border-radius: 16px;
+        text-align: justify;
+        margin: 0 auto;
+        }
+
+        img {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        border: none;
+        display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- PÁGINA 1 -->
+    <div id="p1" class="pagina ativa">
+    <p>Você chega em um reparo, e ao chamar o cliente ele abre o portão, o que você vai fazer primeiro:</p>
+    <button class="button" role="button" onclick="ir('p4')">Se apresentar</button>
+    <button class="button" role="button" onclick="ir('p2')">Entrar na casa do cliente</button>
+    <button class="button" role="button" onclick="ir('p3')">Perguntar qual o problema ele está tendo</button>
+    </div>
+
+    <!-- PÁGINA 2 -->
+    <div id="p2" class="pagina">
+    <p>Cliente se irritou e te expulsou de casa, e disse que não iria mais te receber!</p>
+    <button class="button" role="button" onclick="ir('p1')">Reiniciar</button>
+    </div>
+
+    <!-- PÁGINA 3 -->
+    <div id="p3" class="pagina">
+    <p>Cliente perguntou: primeiramente quem é você?<br>
+    Após você se identificar ele diz: Aprenda a se identificar primeiro, como você quer que eu te responda se eu nem sei quem você é?</p>
+    <button class="button" onclick="ir('p4')">Continuar</button>
+    </div>
+
+    <!-- PÁGINA 4 -->
+    <div id="p4" class="pagina">
+    <p>Após você se apresentar e entrar na residência do cliente você pergunta qual o problema ele está tendo, o mesmo diz que após uma queda da ONT, a internet parou de funcionar, você olha e vê que a ont estava ligada mas está sem sinal óptico, o que você irá fazer:</p>
+    <button class="button" onclick="ir('p5')">Trocar a ONT</button>
+    <button class="button" onclick="ir('p7')">Verificar a potência</button>
+    <button class="button" onclick="ir('p6')">Resetar a ONT</button>
+    </div>
+
+    <!-- PÁGINA 5 -->
+    <div id="p5" class="pagina">
+    <p>Após trocar a ONT o problema continuou, o que você tenta fazer dessa vez:</p>
+    <button class="button" onclick="ir('p7')">Verificar a potência</button>
+    <button class="button" onclick="ir('p6')">Resetar a ONT</button>
+    </div>
+
+    <!-- PÁGINA 6 -->
+    <div id="p6" class="pagina">
+    <p>Após resetar a ONT o problema continuou, o que você tenta fazer dessa vez:</p>
+    <button class="button" onclick="ir('p7')">Verificar a potência</button>
+    <button class="button" onclick="ir('p5')">Trocar a ONT</button>
+    </div>
+
+    <!-- PÁGINA 7 -->
+    <div id="p7" class="pagina">
+    <p>Testado a potência constatou que estava com potência LO, qual o próximo passo que você seguirá:</p>
+    <button class="button" onclick="ir('p12')">Testar o Conector</button>
+    <button class="button" onclick="ir('p9')">Testar a CDOE</button>
+    <button class="button" onclick="ir('p8')">Falar com a gerência</button>
+    </div>
+
+    <!-- PÁGINA 8 -->
+    <div id="p8" class="pagina">
+    <p>Falando com a gerência a mesma informa que está tudo certo por lá, que deve ser algum problema físico, o que você irá fazer agora:</p>
+    <button class="button" onclick="ir('p12')">Testar o Conector</button>
+    <button class="button" onclick="ir('p9')">Testar a CDOE</button>
+    </div>
+
+    <!-- PÁGINA 9 -->
+    <div id="p9" class="pagina">
+    <p>Após realizar a APR na parte do solo, se equipar e equipar a escada corretamente você irá subir, qual o procedimento você irá realizar ao subir:</p>
+    <button class="button" onclick="ir('p10')">Testar a potência da CDOE</button>
+    <button class="button" onclick="ir('p10')">Trocar o conector do drop</button>
+    <button class="button" onclick="ir('p11')">Testar o poste com chave teste</button>
+    </div>
+
+    <!-- PÁGINA 10 -->
+    <div id="p10" class="pagina">
+   <img src="morte.png" alt="">
+    <p>Havia um ponto com fuga de energia e você não testou, acabou tomando uma descarga.  
+    Essa é a importância da utilização da chave teste!</p>
+    <button class="button" role="button" onclick="ir('p1')">Reiniciar</button>
+    </div>
+
+    <!-- PÁGINA 11 -->
+    <div id="p11" class="pagina">
+    <p>Feito testes com a chave teste e testado a potência na CDOE verificou que a o sinal estava bom, ao voltar no cliente resolveu trocar o conector para testar.</p>    
+    <button class="button" onclick="ir('p12')">Continuar</button>
+    </div>
+
+    <!-- PÁGINA 12 -->
+    <div id="p12" class="pagina">
+    <p>Trocou o conector, o sinal ficou excelente, reconectou na ONT e a internet voltou, qual o próximo passo:</p>
+    <button class="button" onclick="ir('p13')">Avisar o cliente e ir embora</button>
+    <button class="button" onclick="ir('p13')">Testar no seu equipamento e ir embora</button>
+    <button class="button" onclick="ir('p14')">Testar junto ao cliente se todos os equipamentos dele voltou a funcionar </button>
+    </div>
+
+    <!-- PÁGINA 13 -->
+    <div id="p13" class="pagina">
+    <p>Na mesma noite o cliente abriu um reparo.  
+    Outro técnico foi ao local e percebeu que o cabo de rede da TV estava desconectado.  
+    Sempre teste junto ao cliente!</p>
+    <button class="button" role="button" onclick="ir('p1')">Reiniciar</button>
+    </div>
+
+    <!-- PÁGINA 14 -->
+    <div id="p14" class="pagina">
+    <p>Correto! Sempre teste com o cliente.  
+    Você finalizou o reparo com sucesso.</p>
+    <button class="button" role="button" onclick="ir('p1')">Reiniciar</button>
+    </div>
+
+
+    <script>
+    function ir(pagina) {
+    document.querySelectorAll('.pagina').forEach(p => {
+        p.classList.remove('ativa');
+    });
+
+    document.getElementById(pagina).classList.add('ativa');
+    }
+    </script>
+
+</body>
+</html>

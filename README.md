@@ -1,6 +1,6 @@
 # Bem Vindo
 
-Criei esse site para ajudar nos treinamentos de *Instalador Fibra Optica*
+Criei esse site para ajudar nos treinamentos de *Instalador Fibra Óptica*
 
 Ainda estou criando mais situações
 

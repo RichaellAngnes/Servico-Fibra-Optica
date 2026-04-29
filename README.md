@@ -3,4 +3,4 @@
 
 Criei esse site para ajudar nos treinamentos de *Instalador FTTH*
 
-Está em constante ampliação de situações:
+Ainda estou criando mais situações
